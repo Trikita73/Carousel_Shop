@@ -3,3 +3,71 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --bg-show: #ECF0F6;
+    --bg-odd: #F6F8FC;
+    --aside: 300px;
+    --model-width: 300px;
+    --model-height: 600px;
+}
+
+@font-face {
+    font-family: raleway-l;
+    src: url(../fonts/raleway-400.woff2);
+}
+@font-face {
+    font-family: raleway-l;
+    src: url(../fonts/raleway-300.woff2);
+    font-weight: 300;
+}
+@font-face {
+    font-family: raleway-l;
+    src: url(../fonts/raleway-600.woff2);
+    font-weight: 600;
+}
+@font-face {
+    font-family: raleway-l;
+    src: url(../fonts/raleway-700.woff2);
+    font-weight: 700;
+}
+
+body {
+    font-family: raleway-l, sans-serif;
+}
+
+.show {
+    background: var(--bg-show);
+    height: 100vh;
+    width: calc(100vw - var(--aside));
+}
+
+.layers {
+    position: absolute;
+    inset: 0;
+}
+.layers > * {
+    width: var(--model-width);
+    height: var(--model-height);
+    position: absolute;
+    left: calc(100vw - var(--aside) - 20vw);
+    margin-left: calc(var(--model-width) / -2);
+    margin-top: calc(var(--model-height) / -2);
+    cursor: pointer;
+    /*Для глубокого скрола в css*/
+    animation-timeline: scroll();
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-range: 300vh;
+}
+.layers img {
+    height: 100%;
+}
+
+.aside {
+    background:#fff;
+    width: var(--aside);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
