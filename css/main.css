@@ -9,7 +9,8 @@
     --bg-odd: #F6F8FC;
     --aside: 300px;
     --model-width: 300px;
-    --model-height: 600px;
+    /*--model-height: 640px;*/
+    --model-height: 87.5vh;
 }
 
 @font-face {
@@ -189,7 +190,7 @@ body {
     font-size: 14px;
 }
 .item .price {
-    text-align: center;
+    text-align: left;
     font-weight: 600;
     opacity: .5;
     letter-spacing: -.25px;
@@ -217,4 +218,64 @@ body {
     height: calc(100% - 50px);
     max-width: 150px;
     object-fit: contain;
+}
+
+.logo {
+    position: fixed;
+    bottom: 8vh;
+    left: 3.5vw;
+    text-transform: uppercase;
+    z-index: 10;
+}
+.logo__text {
+    font-weight: 700;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    letter-spacing: .5px;
+}
+.logo p {
+    font-size: 12px;
+    opacity: .6;
+}
+
+.collection {
+    position: absolute;
+    top: 5vh;
+    left: 3.5vw;
+    max-width: 360px;
+    z-index: 10;
+}
+.collection h2 {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0;
+}
+.collection p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 14px;
+}
+
+@media (max-width: 991.98px) {
+    :root {
+        --aside: 260px;
+    }
+    .collection {
+        max-width: 200px;
+    }
+}
+@media (max-width: 767.98px) {
+    .show {
+        display: none;
+    }
+    .aside {
+        width: 100%;
+    }
+    .item img {
+        height: calc(100% - 2px);
+    }
+    .item__bottom {
+        bottom: 2px;
+    }
 }
